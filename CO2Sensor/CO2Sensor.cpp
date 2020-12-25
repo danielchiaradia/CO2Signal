@@ -48,16 +48,16 @@ void updateDisplay(int co2Value) {
 	co2Text.concat("\nTemp:");
 
 	char tempChar[4];
-	dtostrf(climateSensor.getTemperatureCelcius(), 2, 2, tempChar);
+	dtostrf(climateSensor.getTemperatureCelcius(true), 2, 2, tempChar);
 	co2Text.concat(tempChar);
 
 	char humChar[4];
-	dtostrf(climateSensor.getRelativeHumidity(), 2, 2, humChar);
+	dtostrf(climateSensor.getRelativeHumidity(true), 2, 2, humChar);
 	co2Text.concat("\nHum: ");
 	co2Text.concat(humChar);
 
 	char presChar[4];
-	dtostrf(climateSensor.getPressure(), 4, 0, presChar);
+	dtostrf(climateSensor.getPressure(true), 4, 0, presChar);
 	co2Text.concat("\nPres: ");
 	co2Text.concat(presChar);
 
@@ -76,13 +76,13 @@ void updateDisplay(int co2Value) {
 	Serial.println(response);
 
 	Serial.print("Humidity: ");
-	Serial.println(climateSensor.getRelativeHumidity());
+	Serial.println(climateSensor.getRelativeHumidity(true));
 
 	Serial.print("Temperature: ");
-	Serial.println(climateSensor.getTemperatureCelcius());
+	Serial.println(climateSensor.getTemperatureCelcius(true));
 
 	Serial.print("Pressure: ");
-	Serial.println(climateSensor.getPressure());
+	Serial.println(climateSensor.getPressure(true));
 }
 
 void updateSignal() {
