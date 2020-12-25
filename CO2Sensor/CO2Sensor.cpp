@@ -58,7 +58,7 @@ void updateDisplay(int co2Value) {
 
 	char presChar[4];
 	dtostrf(climateSensor.getPressure(true), 4, 0, presChar);
-	co2Text.concat("\nPres: ");
+	co2Text.concat("\nPres:");
 	co2Text.concat(presChar);
 
 	displayText(co2Text.c_str());
